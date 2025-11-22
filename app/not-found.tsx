@@ -1,0 +1,17 @@
+export default function NotFound() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
+      <h1 className="text-6xl font-bold text-primary mb-4">404</h1>
+      <h2 className="text-2xl font-semibold mb-6">Page Not Found</h2>
+      <p className="text-muted-foreground mb-8 max-w-md">
+        Sorry, we couldn't find the page you're looking for. It might have been moved or doesn't exist.
+      </p>
+      <a
+        href="/"
+        className="inline-flex items-center justify-center h-10 px-6 py-2 text-sm font-medium transition-colors rounded-md bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      >
+        Return Home
+      </a>
+    </div>
+  )
+}
