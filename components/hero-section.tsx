@@ -1,8 +1,10 @@
 "use client"
-import { ArrowRight, Github, Linkedin, Mail, FileText, Terminal, Leaf, Globe } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { personalInfo } from "@/lib/data"
+import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -28,7 +30,6 @@ export function HeroSection() {
                 {personalInfo.title} & <span className="text-primary/80">Tech Enthusiast</span>
               </h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl leading-relaxed">{personalInfo.bio}</p>
-              {/* Capitalized 'Understanding' in the tagline */}
               <p className="text-lg font-medium italic text-primary/80">
                 "Understanding our world, one pixel at a time..."
               </p>
@@ -80,25 +81,17 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Visual Element - Abstract Tech/Nature Blend */}
           <div className="relative hidden lg:block">
             <div className="relative w-full aspect-square max-w-md mx-auto">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-blue-500/20 rounded-3xl rotate-3 backdrop-blur-sm border border-white/10" />
-              <div className="absolute inset-0 bg-card/50 backdrop-blur-md rounded-3xl -rotate-3 border border-white/10 shadow-2xl flex items-center justify-center overflow-hidden">
-                <div className="grid grid-cols-2 gap-4 p-8 w-full h-full opacity-80">
-                  <div className="bg-primary/10 rounded-2xl p-4 flex items-center justify-center hover:bg-primary/20 transition-colors duration-500">
-                    <Terminal className="w-12 h-12 text-primary" />
-                  </div>
-                  <div className="bg-blue-500/10 rounded-2xl p-4 flex items-center justify-center hover:bg-blue-500/20 transition-colors duration-500">
-                    <Globe className="w-12 h-12 text-blue-500" />
-                  </div>
-                  <div className="bg-emerald-500/10 rounded-2xl p-4 flex items-center justify-center hover:bg-emerald-500/20 transition-colors duration-500">
-                    <Leaf className="w-12 h-12 text-emerald-500" />
-                  </div>
-                  <div className="bg-purple-500/10 rounded-2xl p-4 flex items-center justify-center hover:bg-purple-500/20 transition-colors duration-500">
-                    <div className="text-4xl font-bold text-purple-500">{"</>"}</div>
-                  </div>
-                </div>
+              <div className="absolute inset-0 bg-card/50 backdrop-blur-md rounded-3xl -rotate-3 border border-white/10 shadow-2xl overflow-hidden">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Profile photo of Unnat Parande"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
           </div>

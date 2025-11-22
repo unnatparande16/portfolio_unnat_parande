@@ -18,6 +18,7 @@ export const navigation = [
   { name: "Home", href: "/" },
   { name: "Work", href: "/work" },
   { name: "Education", href: "/education" },
+  { name: "Achievements", href: "/achievements" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -66,6 +67,7 @@ export const projects = [
     institution: "CEPT University",
     description:
       "Created a data processing pipeline for Sentinel-1 L1-C data to quantify subsidence in Kolkata over a one-year period. Established correlation between land subsidence and groundwater overexploitation.",
+    image: "/images/land-subsidence.png",
     technologies: ["Sentinel-1", "InSAR", "SNAP", "Python", "Remote Sensing"],
     link: "https://portfolio.cept.ac.in/drp/ge4050-drp000917-spring-2024/pge22374-spring-2024-ge4050-pge22374",
     modalContent: {
@@ -88,6 +90,7 @@ export const projects = [
     institution: "CEPT University",
     description:
       "Conducted spatiotemporal analysis of PM2.5, PM10, and CO2 levels across CEPT campus using 3D modelling and GIS to identify indoor air pollution hotspots and suggested mitigation measures.",
+    image: "/images/indoor-20air-20quality.png",
     technologies: ["GIS", "3D Modelling", "Spatial Analysis", "Environmental Monitoring"],
     link: "https://portfolio.cept.ac.in/ft/geospatial-modelling-and-application-ge4001-monsoon-2023/assessing-the-indoor-air-quality-for-the-cept-campus-monsoon-2023-pge22374",
     modalContent: {
@@ -110,6 +113,7 @@ export const projects = [
     institution: "CEPT University",
     description:
       "Surveyed gig workers in Rajkot to assess working conditions. Employed Analytical Hierarchy Process (AHP) with weighted overlay analysis to identify suitable locations for rest points, food joints, and local markets.",
+    image: "/images/smart-economy.png",
     technologies: ["GIS", "AHP", "Multi-Criteria Decision Analysis", "Urban Planning", "Field Survey"],
     link: "https://portfolio.cept.ac.in/ft/gis-for-smart-cities-ge4003-spring-2023/boosting-the-local-economy-of-rajkot-spring-2023-pge22374",
     award: "Presented at International Land Use Symposium (ILUS) 2023",
@@ -135,6 +139,7 @@ export const projects = [
     institution: "CEPT University",
     description:
       "Mapped Ahmedabad's modes of public transit, calculated service areas, and assessed accessibility to multi-modal transit in the city.",
+    image: "/images/multi-modal-transit.png",
     technologies: ["GIS", "Network Analysis", "Transport Planning", "Accessibility Modelling"],
     link: "https://portfolio.cept.ac.in/ft/geovisualization-and-spatial-analysis-studio-ge4004-monsoon-2022/modal-interactions-in-a-multi-modal-transport-systems-monsoon-2022-pge22374",
     modalContent: {

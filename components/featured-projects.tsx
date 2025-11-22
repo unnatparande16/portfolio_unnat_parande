@@ -20,7 +20,7 @@ function ProjectCard({
       className="group overflow-hidden border-primary/10 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover-lift hover-glow cursor-pointer flex flex-col h-full"
       onClick={() => onClick(project)}
     >
-      <div className="relative aspect-video overflow-hidden shrink-0">
+      <div className="relative aspect-square overflow-hidden shrink-0">
         <Image
           src={project.image || "/placeholder.svg?height=400&width=600&query=tech+project"}
           alt={project.title}
@@ -57,7 +57,7 @@ function ProjectCard({
               variant="outline"
               className="text-muted-foreground hover:bg-primary/10 hover:text-primary cursor-pointer"
               onClick={(e) => {
-                e.stopPropagation() // Prevent opening modal when clicking tag
+                e.stopPropagation()
                 setShowAllTags(true)
               }}
             >
@@ -71,7 +71,6 @@ function ProjectCard({
 }
 
 export function FeaturedProjects() {
-  // Only show the first 3 projects
   const featuredProjects = projects.slice(0, 3)
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null)
 

@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink } from 'lucide-react'
+import Image from "next/image"
+import { ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -16,6 +17,7 @@ interface Project {
   description: string
   technologies: string[]
   link: string
+  image?: string
   award?: string
   modalContent: {
     detailedDescription: string
@@ -36,14 +38,26 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project) => (
-          <Card key={project.id} className="group hover:shadow-lg transition-all duration-300 hover:border-primary/50">
+          <Card
+            key={project.id}
+            className="group hover:shadow-lg transition-all duration-300 hover:border-primary/50 flex flex-col h-full"
+          >
+            <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/5 to-muted rounded-t-lg w-32 h-32 mx-auto">
+              {project.image ? (
+                <Image
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <span className="text-6xl opacity-20">🛰️</span>
+                </div>
+              )}
+              {project.award && <Badge className="absolute top-2 right-2 bg-secondary">Award Winner</Badge>}
+            </div>
             <CardHeader>
-              <div className="h-48 bg-gradient-to-br from-primary/10 via-secondary/5 to-muted rounded-md mb-4 flex items-center justify-center relative overflow-hidden">
-                <span className="text-8xl opacity-10">🛰️</span>
-                {project.award && (
-                  <Badge className="absolute top-2 right-2 bg-secondary">Award Winner</Badge>
-                )}
-              </div>
               <div className="space-y-2">
                 {project.type && (
                   <Badge variant="outline" className="mb-2">
@@ -58,7 +72,7 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
                 </CardDescription>
               </div>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 mt-auto">
               <p className="text-sm text-muted-foreground text-pretty">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (

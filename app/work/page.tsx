@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import { experiences, projects } from "@/lib/data"
 import { ExperienceTimeline } from "@/components/experience-timeline"
 import { ProjectsGrid } from "@/components/projects-grid"
@@ -13,9 +13,9 @@ export default function WorkPage() {
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-6xl mx-auto space-y-20">
-          {/* Professional Experience */}
+          {/* Work */}
           <section>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Professional Experience</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Work</h1>
             <p className="text-lg text-muted-foreground mb-12 text-pretty">
               Real-world experience developing GIS applications and conducting research
             </p>

@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Terminal, Home, Briefcase, GraduationCap, Mail } from "lucide-react"
+import { Menu, X, Terminal, Home, Briefcase, GraduationCap, Mail, Award } from "lucide-react"
 import { useState, useEffect } from "react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
@@ -14,6 +14,7 @@ const navItems = [
   { name: "Home", path: "/", icon: Home },
   { name: "Work", path: "/work", icon: Briefcase },
   { name: "Education", path: "/education", icon: GraduationCap },
+  { name: "Achievements & more", path: "/achievements", icon: Award },
   { name: "Contact", path: "/contact", icon: Mail },
 ]
 
